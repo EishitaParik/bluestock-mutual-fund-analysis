@@ -1,0 +1,167 @@
+DAY 1 DATA QUALITY SUMMARY
+Total provided CSV files found: 10
+
+======================================================================
+File: 01_fund_master.csv
+Shape: (40, 15)
+Duplicate rows: 0
+Missing values: None
+Data types:
+  - amfi_code: int64
+  - fund_house: str
+  - scheme_name: str
+  - category: str
+  - sub_category: str
+  - plan: str
+  - launch_date: str
+  - benchmark: str
+  - expense_ratio_pct: float64
+  - exit_load_pct: float64
+  - min_sip_amount: int64
+  - min_lumpsum_amount: int64
+  - fund_manager: str
+  - risk_category: str
+  - sebi_category_code: str
+
+======================================================================
+File: 02_nav_history.csv
+Shape: (46000, 3)
+Duplicate rows: 0
+Missing values: None
+Data types:
+  - amfi_code: int64
+  - date: str
+  - nav: float64
+
+======================================================================
+File: 03_aum_by_fund_house.csv
+Shape: (90, 5)
+Duplicate rows: 0
+Missing values: None
+Data types:
+  - date: str
+  - fund_house: str
+  - aum_lakh_crore: float64
+  - aum_crore: int64
+  - num_schemes: int64
+
+======================================================================
+File: 04_monthly_sip_inflows.csv
+Shape: (48, 6)
+Duplicate rows: 0
+Missing values:
+  - yoy_growth_pct: 12
+Data types:
+  - month: str
+  - sip_inflow_crore: int64
+  - active_sip_accounts_crore: float64
+  - new_sip_accounts_lakh: float64
+  - sip_aum_lakh_crore: float64
+  - yoy_growth_pct: float64
+
+======================================================================
+File: 05_category_inflows.csv
+Shape: (144, 3)
+Duplicate rows: 0
+Missing values: None
+Data types:
+  - month: str
+  - category: str
+  - net_inflow_crore: float64
+
+======================================================================
+File: 06_industry_folio_count.csv
+Shape: (21, 6)
+Duplicate rows: 0
+Missing values: None
+Data types:
+  - month: str
+  - total_folios_crore: float64
+  - equity_folios_crore: float64
+  - debt_folios_crore: float64
+  - hybrid_folios_crore: float64
+  - others_folios_crore: float64
+
+======================================================================
+File: 07_scheme_performance.csv
+Shape: (40, 19)
+Duplicate rows: 0
+Missing values: None
+Data types:
+  - amfi_code: int64
+  - scheme_name: str
+  - fund_house: str
+  - category: str
+  - plan: str
+  - return_1yr_pct: float64
+  - return_3yr_pct: float64
+  - return_5yr_pct: float64
+  - benchmark_3yr_pct: float64
+  - alpha: float64
+  - beta: float64
+  - sharpe_ratio: float64
+  - sortino_ratio: float64
+  - std_dev_ann_pct: float64
+  - max_drawdown_pct: float64
+  - aum_crore: int64
+  - expense_ratio_pct: float64
+  - morningstar_rating: int64
+  - risk_grade: str
+
+======================================================================
+File: 08_investor_transactions.csv
+Shape: (32778, 13)
+Duplicate rows: 0
+Missing values: None
+Data types:
+  - investor_id: str
+  - transaction_date: str
+  - amfi_code: int64
+  - transaction_type: str
+  - amount_inr: int64
+  - state: str
+  - city: str
+  - city_tier: str
+  - age_group: str
+  - gender: str
+  - annual_income_lakh: float64
+  - payment_mode: str
+  - kyc_status: str
+
+======================================================================
+File: 09_portfolio_holdings.csv
+Shape: (322, 8)
+Duplicate rows: 0
+Missing values: None
+Data types:
+  - amfi_code: int64
+  - stock_symbol: str
+  - stock_name: str
+  - sector: str
+  - weight_pct: float64
+  - market_value_cr: float64
+  - current_price_inr: float64
+  - portfolio_date: str
+
+======================================================================
+File: 10_benchmark_indices.csv
+Shape: (8050, 3)
+Duplicate rows: 0
+Missing values: None
+Data types:
+  - date: str
+  - index_name: str
+  - close_value: float64
+
+======================================================================
+FUND MASTER EXPLORATION
+Unique fund_house: ['Aditya Birla Sun Life MF', 'Axis Mutual Fund', 'DSP Mutual Fund', 'HDFC Mutual Fund', 'ICICI Prudential MF', 'Kotak Mahindra MF', 'Mirae Asset MF', 'Nippon India MF', 'SBI Mutual Fund', 'UTI Mutual Fund']
+Unique category: ['Debt', 'Equity']
+Unique sub_category: ['ELSS', 'Flexi Cap', 'Gilt', 'Index', 'Index/ETF', 'Large & Mid Cap', 'Large Cap', 'Liquid', 'Mid Cap', 'Short Duration', 'Small Cap', 'Value']
+Unique risk_category: ['High', 'Low', 'Moderate', 'Moderately High', 'Very High']
+
+AMFI CODE VALIDATION
+Fund-master codes: 40
+NAV-history codes: 40
+Codes missing from NAV history: 0
+All fund_master AMFI codes exist in nav_history.
