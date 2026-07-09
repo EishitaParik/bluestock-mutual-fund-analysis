@@ -3,7 +3,7 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 
 PROCESSED_FOLDER = Path("data/processed")
-DATABASE_FILE = "bluestock_mf.db"
+DATABASE_FILE = Path("data/db/bluestock_mf.db")
 
 
 def main():
